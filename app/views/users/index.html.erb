@@ -1,21 +1,62 @@
-<h1>User info</h1>
-<table>
-  <tr>
-    <th><img src="noimage.jpeg"></th>
-    <th></th>
-  </tr>
-  <tr>
-    <th>name</th>
-    <th></th>
-  </tr>
-  <tr>
-    <th>introduction</th>
-    <th></th>
-  </tr>
-</table>
+<div class="container px-5 px-sm-0">
 
-<h1>New post</h1>
-title<br>
-opinion<br>
+  <div class="row">
+    <div class="col-md-3">
+      <h1>User info</h1>
+      <img src="/assets/noimage.jpeg">
+      <table>
+        </tr>
+        <tr>
+          <th>name</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <th></th>
+        </tr>
+      </table>
 
-<h1>ユーザー一覧</h1>
+        <div class="row">
+          <%= link_to edit_user_registration_path, class: "btn btn-outline-primary  btn-block btn-outline-dark" do %>
+          <i class="fas fa-user-cog"></i>
+          <% end %>
+        </div>
+
+
+
+      <h1>New book</h1>
+      <%= form_with model:@book, local:true do |f| %>
+          Title<br>
+          <%= f.text_field :title %><br>
+          本文<br>
+          <%= f.text_area :body %>
+          <br>
+          <%= f.submit '投稿' %>
+      <% end %>
+    </div>
+
+
+    <div class="col-md-8 offset-md-1">
+      <h1>Users</h1>
+      <table>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td><img src="/assets/noimage2.jpeg"></td>
+          <td><%=user.name %></td>
+          <td>Show</td>
+      </tr>
+      <% end %>
+
+      </table>
+
+
+    </div>
+
+  </div>
+
+</div>
