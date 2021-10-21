@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+  @import "bootstrap";
+  @import 'font-awesome-sprockets';
+  @import 'font-awesome';
+  
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  
+  ul.navbar-nav {
+    font-size:18px;
+  }
+  
+
+  header a{
+   color:#fff;
+   border:none;
+  }
+ 
+  header a:hover{
+   color:#666;
+   text-decoration:none;
+  }
+    
+  li{
+  padding-right:10px;
+  letter-spacing:0.05em;
+  }
+
+  span{
+    color:#ffffff;
+    font-size:20px;
+  }
+  
+  footer{
+    text-align:center;
+    padding-top:40px;
+  }
