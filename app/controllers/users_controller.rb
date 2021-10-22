@@ -6,15 +6,32 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @profile_image = User.new
-
+    @profile_images = User.new
+    @user = User.find(params[:id])
 
   end
   
+  def create
+    @profile_image = User.new(profile_image_params)
+    @profileimage.user_id = current_user.id
+    @profile_image.save
+    redirect_to user_path
+  end
+
+
 
   def index
+    @user = current_user
     @users = User.all
+    @profile_images = User.all
   end
   
+  
+  private
+
+  def profile_image_params
+    params.require(:user).permit(:name, :profile_image, :introduction)
+  end
 
 end
+
