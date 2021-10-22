@@ -1,2 +1,17 @@
-<h1>User#edit </h1>
-<h1>画像投稿フォーム</h1>
+<h1>User Info </h1>
+
+<%= form_with model:@user, local:true do |f| %>
+
+  <p class="text">Name</p>
+  <%= f.text_field :name %>
+
+  <p>Image</p>
+
+  <p class="text">Introduction</p>
+  <%= f.text_area :introduction %>
+
+  <p class="text">
+  <%= f.submit 'Update User' %>
+  </p>
+
+<% end %>
