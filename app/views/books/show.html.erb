@@ -10,9 +10,9 @@
       <h1>Bookdetail</h1>
       <table>
         <tr>
-          <td><%= attachment_image_tag @user, :user_id, :fill, 30, 30, fallback: "/assets/noimage2.jpg" %></td>
+          <td><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "/assets/noimage2.jpg" %></td>
           <td><%= link_to @user.name, user_path(@user) %></td>
-          <td><%=@book.title %></td>
+          <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%=@book.body %></td>
           
           <% if @book.user == current_user %>

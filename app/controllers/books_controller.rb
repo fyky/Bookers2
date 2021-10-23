@@ -11,10 +11,15 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    #@user = @book.user
+        #userid = current_user.id
 
-        @userid = current_user.id
-        @user = User.find(@userid)
-        @image = User.find(@userid)
+        #@image = User.find(@userid)
+        
+         #   @newbook = Book.new
+    @user = @book.user
+    #@image = User.find(@user)
+
 
   end
 
