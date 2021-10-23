@@ -2,10 +2,10 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
-    @user = current_user.id
+    @user = current_user
     
     
-        @image = User.find(@user)
+        #@image = User.find(@user)
 
   end
 
@@ -34,8 +34,13 @@ class BooksController < ApplicationController
   def update
     @books = Book.all
     @book = Book.find(params[:id])
-    @book.update(book_params)
-    redirect_to books_path
+    if @book.update(book_params)
+    redirect_to book_path, notice: 'Book was successfully created.'
+    else
+    redirect_to book_path
+    end
+    
+
   end
 
 

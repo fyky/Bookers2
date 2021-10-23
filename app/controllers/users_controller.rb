@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   def show
     @book = Book.new
     @users = User.all
-    @user = User.find(params[:id])
+    @user = current_user
+    #@user = User.find(params[:id])
     @books = Book.where(user_id:@user.id)
         @userid = current_user.id
         @image = User.find(@userid)
@@ -33,11 +34,12 @@ class UsersController < ApplicationController
 
 
   def index
-    @user = current_user.id
+    @user = current_user
    #@users = User.all    
     @users = User.all
-    @image = User.find(@user)
-
+    #@image = User.find(@user)
+    @book = Book.new
+    @books = Book.all
     
   end
   
