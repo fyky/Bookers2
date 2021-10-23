@@ -1,24 +1,21 @@
-  <div class="row">
-    <div class="col-md-3">
+
       <h1>User info</h1>
 
-      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "/assets/noimage2.jpeg" %>
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "/assets/noimage.jpeg" %>
     
       <table>
         </tr>
         <tr>
-          <th>name</th>
-          <th><%= current_user.name %></th>
+          <td><strong>name</strong></td>
+          <td><strong><%= current_user.name %></strong></td>
         </tr>
         <tr>
-          <th>introduction</th>
-          <th></th>
+          <td><strong>introduction</strong></td>
+          <td><strong></strong></td>
         </tr>
       </table>
 
-        <div class="row">
-          <%= link_to edit_user_path(current_user), class: "btn btn-outline-primary  btn-block btn-outline-dark" do %>
-          <i class="fas fa-user-cog"></i>
-          <% end %>
-        </div>
+    <%= link_to edit_user_path(current_user), class: "btn btn-outline-primary  btn-block btn-outline-dark" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
 
