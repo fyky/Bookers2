@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-3">
       <h1>User info</h1>
-      <img src="/assets/noimage.jpeg">
+         <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "noimage.jpg" %>
       <table>
         </tr>
         <tr>
@@ -43,6 +43,11 @@
           <td>ユーザー</td>
           <td><%=@book.title %></td>
           <td><%=@book.body %></td>
+          <td><%= link_to "Edit",edit_book_path(@book) %></td>
+            <td><%= link_to "Destroy",book_path(@book), method: :delete,data: {confirm: "Are you sure?"} %></td>
+
+
+          <td>destroy</td>
         </tr>
       </table>
 
