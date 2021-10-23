@@ -3,8 +3,9 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     @user = current_user.id
-        @userid = current_user.id
-        @image = User.find(@userid)
+    
+    
+        @image = User.find(@user)
 
   end
 
@@ -20,8 +21,9 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    @book.user_id = current_user.id
     @book.save
-    redirect_to books_path
+    redirect_to book_path(@book)
   end
   
   def update

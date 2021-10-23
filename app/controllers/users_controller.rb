@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
-    @books = Book.all
     @book = Book.new
     @users = User.all
     @user = User.find(params[:id])
+    @books = Book.where(user_id:@user.id)
         @userid = current_user.id
         @image = User.find(@userid)
 
