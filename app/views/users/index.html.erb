@@ -16,7 +16,7 @@
       </table>
 
         <div class="row">
-          <%= link_to "users/:id/edit", class: "btn btn-outline-primary  btn-block btn-outline-dark" do %>
+          <%= link_to edit_user_path(@user), class: "btn btn-outline-primary  btn-block btn-outline-dark" do %>
           <i class="fas fa-user-cog"></i>
           <% end %>
         </div>
@@ -47,7 +47,7 @@
         <tr>
           <td><img src="/assets/noimage2.jpeg"></td>
           <td><%=user.name %></td>
-          <td>Show</td>
+          <td><%= link_to "Show", user_path(user.id) %></td>
       </tr>
       <% end %>
 
