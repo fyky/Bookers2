@@ -3,11 +3,18 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     @user = current_user.id
+        @userid = current_user.id
+        @image = User.find(@userid)
+
   end
 
   def show
     @book = Book.find(params[:id])
-    
+
+        @userid = current_user.id
+        @user = User.find(@userid)
+        @image = User.find(@userid)
+
   end
 
 
