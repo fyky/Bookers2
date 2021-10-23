@@ -14,12 +14,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def create
-    #@profile_image = User.new(profile_image_params)
-    #@profile_image.user_id = current_user.id
-    #@profile_image.save
-  end
-
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
@@ -32,13 +26,9 @@ class UsersController < ApplicationController
   
   
 
-
-
   def index
     @user = current_user
-   #@users = User.all    
     @users = User.all
-    #@image = User.find(@user)
     @book = Book.new
     @books = Book.all
     

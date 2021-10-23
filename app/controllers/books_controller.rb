@@ -4,21 +4,12 @@ class BooksController < ApplicationController
     @book = Book.new
     @user = current_user
     
-    
-        #@image = User.find(@user)
 
   end
 
   def show
     @book = Book.find(params[:id])
-    #@user = @book.user
-        #userid = current_user.id
-
-        #@image = User.find(@userid)
-        
-         #   @newbook = Book.new
     @user = @book.user
-    #@image = User.find(@user)
 
 
   end
@@ -47,7 +38,6 @@ class BooksController < ApplicationController
     else
     redirect_to book_path
     end
-    
 
   end
 
