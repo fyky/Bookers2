@@ -5,13 +5,16 @@
       <%= render 'books/post', book: @book %>
     </div>
     
-    
     <div class="col-md-8 offset-md-1">
       <h1>Bookdetail</h1>
       <table>
         <tr>
-          <td><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "/assets/noimage2.jpg" %></td>
-          <td><%= link_to @user.name, user_path(@user) %></td>
+          <td>
+            <%= link_to user_path(@user) do %>
+              <%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "/assets/noimage2.jpg" %><br>
+              <%= @user.name %>
+            <% end %>
+          </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%=@book.body %></td>
           
