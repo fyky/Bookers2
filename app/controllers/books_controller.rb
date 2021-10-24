@@ -3,15 +3,11 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     @user = current_user
-
-
   end
 
   def show
     @book = Book.find(params[:id])
     @user = @book.user
-
-
   end
 
 
@@ -26,7 +22,6 @@ class BooksController < ApplicationController
     else
       render "index"
     end
-
   end
 
   def update
@@ -37,9 +32,7 @@ class BooksController < ApplicationController
     else
     render "edit"
     end
-
   end
-
 
   def new
     @book = Book.new
@@ -48,8 +41,6 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
     @user = current_user
-
-
     if @book.user == current_user
       render "edit"
     else
